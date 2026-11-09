@@ -21,7 +21,7 @@ if (toggle && nav) {
 const clock = document.querySelector('[data-clock]');
 if (clock) {
   const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Riyadh' });
-  const tick = () => { clock.textContent = 'Riyadh ' + fmt.format(new Date()); };
+  const tick = () => { clock.textContent = fmt.format(new Date()) + ' local time'; };
   tick();
   setInterval(tick, 30000);
 }
