@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 
   <script type="application/ld+json">
   {
@@ -36,9 +36,25 @@
     "alumniOf": "Lebanese University"
   }
   </script>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="18" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 7.5h.01M7 16.5h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 5.2a3 3 0 010 5.6M18 14.8c1.6.7 2.6 2.4 3 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.8 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.4 1.8 2.4 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.2-.7 1.5-.6.4-1.5.5-2.6.1-1.6-.6-3.3-2-4.2-3.6-.6-1.1-.7-2-.4-2.7z" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V5a1 1 0 00-1-1H5a1 1 0 00-1 1v10a1 1 0 001 1h3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v14M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V6M6 12l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
@@ -51,11 +67,13 @@
         <span class="sr-only">Menu</span>
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
-        <a href="#work">Work</a>
-        <a href="#services">What I do</a>
-        <a href="#career">Career</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-small btn-amber" href="assets/docs/Bilal_Mrad_Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a href="#work" data-spy>Work</a>
+        <a href="#services" data-spy>What I do</a>
+        <a href="#career" data-spy>Career</a>
+        <a href="#contact" data-spy>Contact</a>
+        <a class="btn btn-small btn-amber" href="assets/docs/Bilal_Mrad_Resume.pdf" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-down"/></svg>Download CV
+        </a>
       </nav>
     </div>
   </header>
@@ -63,139 +81,194 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
+      <canvas class="hero-net" data-net aria-hidden="true"></canvas>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="status" data-status>
+          <p class="status">
             <span class="status-dot" aria-hidden="true"></span>
             <span>Based in Riyadh, Saudi Arabia</span>
             <span class="status-time" data-clock></span>
           </p>
-          <h1 class="hero-title">I turn engineering and business workflows into software people use every day.</h1>
+          <h1 class="hero-title">I turn engineering and business workflows into software people <span class="rotator" data-rotator aria-live="off"><span>use every day.</span></span></h1>
           <p class="hero-lede">I’m Bilal Mrad, IT &amp; Software Development Manager at STED Saudi in Riyadh. For 18 years I’ve built platforms for engineering, learning, parking, logistics and security, while keeping the IT running for the teams who depend on them.</p>
           <div class="hero-actions">
             <a class="btn btn-amber" href="#work">See selected work</a>
-            <a class="btn btn-ghost" href="https://wa.me/966509296490" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn btn-ghost" href="https://wa.me/966509296490" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Message on WhatsApp
+            </a>
           </div>
         </div>
 
-        <figure class="hero-portrait">
+        <figure class="hero-photo" data-tilt>
           <img src="assets/img/bilal-photo.webp" width="1400" height="933" alt="Bilal Mrad at his desk with a laptop, next to the words Turning ideas into digital solutions" fetchpriority="high" />
+          <figcaption class="photo-chip">
+            <span class="chip-ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
+            <span><strong>STED Saudi</strong><br />IT &amp; Software Development Manager</span>
+          </figcaption>
         </figure>
       </div>
 
       <div class="wrap">
         <dl class="facts">
-          <div><dt>Years in software &amp; IT</dt><dd>18</dd></div>
-          <div><dt>Engineers supported</dt><dd>150+</dd></div>
-          <div><dt>Project sites connected</dt><dd>25+</dd></div>
-          <div><dt>Industries served</dt><dd>7</dd></div>
+          <div><dt>Years in software &amp; IT</dt><dd><span data-count="18">18</span></dd></div>
+          <div><dt>Engineers supported</dt><dd><span data-count="150">150</span>+</dd></div>
+          <div><dt>Project sites connected</dt><dd><span data-count="25">25</span>+</dd></div>
+          <div><dt>Industries served</dt><dd><span data-count="7">7</span></dd></div>
         </dl>
       </div>
     </section>
 
+    <!-- STACK MARQUEE -->
+    <div class="marquee" aria-label="Technologies I work with">
+      <div class="marquee-track" data-marquee>
+        <span>PHP</span><span>CodeIgniter</span><span>C# / ASP.NET</span><span>TypeScript</span><span>React Native</span><span>Next.js</span><span>Expo</span><span>Express</span><span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>Supabase</span><span>Microsoft 365</span><span>Exchange Online</span><span>Aconex</span><span>NetXMS</span><span>Git &amp; GitHub</span>
+      </div>
+    </div>
+
     <!-- SELECTED WORK -->
     <section id="work" class="section section-light">
       <div class="wrap">
-        <header class="section-head">
+        <header class="section-head reveal">
           <h2>Selected work</h2>
           <p>Systems built around how a team actually works: the inspection log, the exam, the parking ticket, the container on the quay.</p>
         </header>
 
-        <article class="case-feature">
-          <div class="case-media">
-            <img src="assets/img/sted.webp" width="1100" height="733" alt="STED brand mark" loading="lazy" />
-          </div>
-          <div class="case-body">
-            <p class="case-meta">STED Saudi · 2022 to now</p>
-            <h3>MEP commissioning &amp; engineering management platform</h3>
-            <p>A single place for projects, buildings, rooms, trades, systems and equipment. Engineers log inspections and TIR/SOR records on site; managers see completion, weightage and progress without chasing spreadsheets.</p>
-            <ul class="tags" aria-label="Technology">
-              <li>CodeIgniter</li><li>PHP</li><li>MySQL</li><li>JavaScript</li>
-            </ul>
-          </div>
-        </article>
+        <div class="filters reveal" role="toolbar" aria-label="Filter projects" data-filters>
+          <button class="chip is-active" data-filter="all" aria-pressed="true">All <span class="n"></span></button>
+          <button class="chip" data-filter="engineering" aria-pressed="false">Engineering <span class="n"></span></button>
+          <button class="chip" data-filter="mobile" aria-pressed="false">Web &amp; mobile apps <span class="n"></span></button>
+          <button class="chip" data-filter="security" aria-pressed="false">Security &amp; AI <span class="n"></span></button>
+          <button class="chip" data-filter="gov" aria-pressed="false">Public sector <span class="n"></span></button>
+        </div>
 
-        <div class="case-grid">
-          <article class="case">
-            <p class="case-meta">Learning platform</p>
-            <h3><a href="https://stedtrainingcenter.com" target="_blank" rel="noopener">STED Training Center LMS</a></h3>
+        <div class="work-grid" data-work>
+          <article class="project project-feature reveal" data-cat="engineering" data-spot>
+            <div class="project-media">
+              <img src="assets/img/sted.webp" width="1100" height="733" alt="STED brand mark" loading="lazy" />
+              <span class="badge badge-live">In daily use</span>
+            </div>
+            <div class="project-body">
+              <p class="project-meta">STED Saudi · 2022 to now</p>
+              <h3>MEP commissioning &amp; engineering management platform</h3>
+              <p>A single place for projects, buildings, rooms, trades, systems and equipment. Engineers log inspections and TIR/SOR records on site; managers see completion, weightage and progress without chasing spreadsheets.</p>
+              <ul class="tags" aria-label="Technology"><li>CodeIgniter</li><li>PHP</li><li>MySQL</li><li>JavaScript</li></ul>
+            </div>
+          </article>
+
+          <article class="project reveal" data-cat="engineering" data-spot>
+            <span class="badge badge-live">Live</span>
+            <p class="project-meta">Learning platform</p>
+            <h3><a href="https://stedtrainingcenter.com" target="_blank" rel="noopener">STED Training Center LMS <svg class="ico" aria-hidden="true"><use href="#i-ext"/></svg></a></h3>
             <p>Registration, video courses, quizzes, exams, certificates, instructor tools and reporting for professional engineering education.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>Learners move from sign-up to certificate in one flow; instructors build courses and exams without a developer; admins get enrolment and completion reports.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>CodeIgniter</li><li>MySQL</li></ul>
           </article>
-          <article class="case">
-            <p class="case-meta">Mobile product</p>
+
+          <article class="project reveal" data-cat="mobile" data-spot>
+            <p class="project-meta">Mobile product</p>
             <h3>ParkMeter parking platform</h3>
             <p>Driver and inspector apps with offline mode, secure QR tickets, wallet and vouchers, plate validation, payments and a revenue dashboard.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>Inspectors keep working without signal and sync later; drivers pay, top up and use vouchers in the app; operators follow revenue on a dashboard.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>React Native</li><li>Next.js</li><li>Supabase</li></ul>
           </article>
-          <article class="case">
-            <p class="case-meta">Real-time app</p>
+
+          <article class="project reveal" data-cat="mobile" data-spot>
+            <p class="project-meta">Real-time app</p>
             <h3>Nexa Relay chat</h3>
             <p>Multilingual web, PWA and mobile chat with public rooms, private messages, presence, moderation and an admin console.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>One TypeScript codebase serves web, installable PWA and native mobile, with live presence and moderation tools for admins.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>Expo</li><li>TypeScript</li><li>Supabase</li></ul>
           </article>
-          <article class="case">
-            <p class="case-meta">Port of Beirut</p>
+
+          <article class="project reveal" data-cat="gov" data-spot>
+            <p class="project-meta">Port of Beirut</p>
             <h3>Port logistics &amp; operations</h3>
             <p>Container and vessel tracking, operational reports and messaging between the port and the container terminal consortium.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>Port and terminal teams shared one set of container, vessel and operational records, with messaging built in.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>.NET</li><li>SQL Server</li></ul>
           </article>
-          <article class="case">
-            <p class="case-meta">Security &amp; AI</p>
+
+          <article class="project reveal" data-cat="security" data-spot>
+            <p class="project-meta">Security &amp; AI</p>
             <h3>Recognition &amp; security systems</h3>
             <p>Face recognition, licence-plate and make/model recognition, document signing, visitor management and ATM surveillance.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>Built on Neurocar ANPR/MMR, with training in Wrocław, Poland. Includes monitoring of networked devices with NetXMS.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>.NET</li><li>ANPR/MMR</li><li>NetXMS</li></ul>
           </article>
-          <article class="case">
-            <p class="case-meta">Public sector</p>
+
+          <article class="project reveal" data-cat="gov" data-spot>
+            <p class="project-meta">Public sector</p>
             <h3>Election operations software</h3>
             <p>Tools that support election logistics and day-of operations, built for reliability under a hard deadline.</p>
+            <button class="more" aria-expanded="false" data-more><svg aria-hidden="true"><use href="#i-plus"/></svg><span>Details</span></button>
+            <div class="more-body" hidden>
+              <p>Built at Site Technology SAL in Beirut, where I also led developer onboarding.</p>
+            </div>
             <ul class="tags" aria-label="Technology"><li>.NET</li><li>SQL Server</li></ul>
           </article>
         </div>
+        <p class="empty" hidden data-empty>No projects in this category yet.</p>
 
-        <h3 class="sub-head">Websites I’ve built for clients</h3>
+        <div class="sub-head reveal">
+          <h3>Websites I’ve built for clients</h3>
+          <p>Live sites, designed and delivered end to end, including hosting, DNS and SSL.</p>
+        </div>
         <ul class="sites">
-          <li>
-            <a class="site" href="https://sevenskytech.com/" target="_blank" rel="noopener">
-              <img src="assets/img/sevenskytech.webp" alt="" loading="lazy" width="1100" height="440" />
-              <span class="site-name">Seven Sky Tech</span>
-              <span class="site-kind">Web &amp; software studio</span>
+          <li class="reveal">
+            <a class="site" href="https://sevenskytech.com/" target="_blank" rel="noopener" data-spot>
+              <span class="site-media"><img src="assets/img/sevenskytech.webp" alt="" loading="lazy" width="1100" height="440" /></span>
+              <span class="site-text"><span class="site-name">Seven Sky Tech</span><span class="site-kind">Web &amp; software studio</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
-          <li>
-            <a class="site" href="https://sindibadexpress.com" target="_blank" rel="noopener">
-              <img src="assets/img/sindibad.webp" alt="" loading="lazy" width="1100" height="733" />
-              <span class="site-name">Sindibad Express</span>
-              <span class="site-kind">E-commerce &amp; delivery</span>
+          <li class="reveal">
+            <a class="site" href="https://sindibadexpress.com" target="_blank" rel="noopener" data-spot>
+              <span class="site-media"><img src="assets/img/sindibad.webp" alt="" loading="lazy" width="1100" height="733" /></span>
+              <span class="site-text"><span class="site-name">Sindibad Express</span><span class="site-kind">E-commerce &amp; delivery</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
-          <li>
-            <a class="site" href="https://chehim.com" target="_blank" rel="noopener">
-              <img src="assets/img/chehim.webp" alt="" loading="lazy" width="1100" height="487" />
-              <span class="site-name">Chehim</span>
-              <span class="site-kind">Food &amp; retail</span>
+          <li class="reveal">
+            <a class="site" href="https://chehim.com" target="_blank" rel="noopener" data-spot>
+              <span class="site-media"><img src="assets/img/chehim.webp" alt="" loading="lazy" width="1100" height="487" /></span>
+              <span class="site-text"><span class="site-name">Chehim</span><span class="site-kind">Food &amp; retail</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
-          <li>
-            <a class="site" href="https://kingofgymlb.com" target="_blank" rel="noopener">
-              <img src="assets/img/kingofgym.webp" alt="" loading="lazy" width="1100" height="587" />
-              <span class="site-name">King Of Gym</span>
-              <span class="site-kind">Fitness brand</span>
+          <li class="reveal">
+            <a class="site" href="https://kingofgymlb.com" target="_blank" rel="noopener" data-spot>
+              <span class="site-media"><img src="assets/img/kingofgym.webp" alt="" loading="lazy" width="1100" height="587" /></span>
+              <span class="site-text"><span class="site-name">King Of Gym</span><span class="site-kind">Fitness brand</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
-          <li>
-            <a class="site site-type site-rose" href="https://sanfoura.com" target="_blank" rel="noopener">
-              <span class="site-word" aria-hidden="true">Sanfoura</span>
-              <span class="site-name">Sanfoura</span>
-              <span class="site-kind">Fashion &amp; accessories</span>
+          <li class="reveal">
+            <a class="site" href="https://sanfoura.com" target="_blank" rel="noopener" data-spot>
+              <span class="site-media site-word site-rose" aria-hidden="true">Sanfoura</span>
+              <span class="site-text"><span class="site-name">Sanfoura</span><span class="site-kind">Fashion &amp; accessories</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
-          <li>
-            <a class="site site-type site-steel" href="https://stedltd.com" target="_blank" rel="noopener">
-              <span class="site-word" aria-hidden="true">STED Ltd</span>
-              <span class="site-name">STED Ltd</span>
-              <span class="site-kind">Engineering corporate site</span>
+          <li class="reveal">
+            <a class="site" href="https://stedltd.com" target="_blank" rel="noopener" data-spot>
+              <span class="site-media site-word site-steel" aria-hidden="true">STED Ltd</span>
+              <span class="site-text"><span class="site-name">STED Ltd</span><span class="site-kind">Engineering corporate site</span></span>
+              <svg class="site-go" aria-hidden="true"><use href="#i-ext"/></svg>
             </a>
           </li>
         </ul>
@@ -203,27 +276,32 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="wrap services">
-        <header class="section-head">
+    <section id="services" class="section section-dark">
+      <canvas class="section-net" data-net="soft" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <header class="section-head reveal">
           <h2>What I do</h2>
           <p>I sit between management, engineers and vendors, and I still write the code.</p>
         </header>
-
-        <div class="service">
-          <h3>Build the software</h3>
-          <p>From requirements to deployment: database design, back-end logic, web and mobile front ends, and the dashboards managers ask for.</p>
-          <p class="stack">PHP · CodeIgniter · C# / ASP.NET · TypeScript · React Native · Next.js · Express · MySQL · PostgreSQL · SQL Server · Supabase</p>
-        </div>
-        <div class="service">
-          <h3>Run the IT</h3>
-          <p>Microsoft 365 and Exchange Online, licences, onboarding and offboarding, devices, hosting, DNS, SSL and backups, on site and remote.</p>
-          <p class="stack">Microsoft 365 · Exchange Online · Aconex · cPanel · Hostinger · NetXMS · Git &amp; GitHub</p>
-        </div>
-        <div class="service">
-          <h3>Lead the delivery</h3>
-          <p>Turning requests into scoped work, setting priorities, coordinating vendors, writing the documentation and training the people who will use it.</p>
-          <p class="stack">Technical project management · Agile delivery · Stakeholder &amp; vendor management · Mentoring</p>
+        <div class="services">
+          <article class="service reveal" data-spot>
+            <span class="service-ico"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>Build the software</h3>
+            <p>From requirements to deployment: database design, back-end logic, web and mobile front ends, and the dashboards managers ask for.</p>
+            <ul class="checks"><li>Web platforms &amp; portals</li><li>Mobile apps with offline mode</li><li>Reporting dashboards</li></ul>
+          </article>
+          <article class="service reveal" data-spot>
+            <span class="service-ico"><svg aria-hidden="true"><use href="#i-server"/></svg></span>
+            <h3>Run the IT</h3>
+            <p>Microsoft 365 and Exchange Online, licences, onboarding and offboarding, devices, hosting, DNS, SSL and backups, on site and remote.</p>
+            <ul class="checks"><li>150+ users across 25+ sites</li><li>Hosting, domains &amp; SSL</li><li>Network &amp; device monitoring</li></ul>
+          </article>
+          <article class="service reveal" data-spot>
+            <span class="service-ico"><svg aria-hidden="true"><use href="#i-team"/></svg></span>
+            <h3>Lead the delivery</h3>
+            <p>Turning requests into scoped work, setting priorities, coordinating vendors, writing the documentation and training the people who will use it.</p>
+            <ul class="checks"><li>Technical project management</li><li>Vendor &amp; stakeholder coordination</li><li>Developer onboarding &amp; mentoring</li></ul>
+          </article>
         </div>
       </div>
     </section>
@@ -231,47 +309,47 @@
     <!-- CAREER -->
     <section id="career" class="section section-light">
       <div class="wrap">
-        <header class="section-head">
+        <header class="section-head reveal">
           <h2>Career</h2>
           <p>Eighteen years, from municipal web platforms in Beirut to engineering systems in Riyadh.</p>
         </header>
 
-        <ol class="timeline">
-          <li class="current">
+        <ol class="timeline" data-timeline>
+          <li class="current reveal">
             <span class="when">2022 – now</span>
-            <div>
+            <div class="tl-card">
               <h3>IT &amp; Software Development Manager</h3>
               <p class="where">STED Saudi Co. Ltd., Riyadh</p>
               <p>Lead software development and IT operations. Built the MEP commissioning platform and the Training Center LMS; support 150+ engineers across 25+ sites.</p>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="when">2019 – 2022</span>
-            <div>
+            <div class="tl-card">
               <h3>Senior Full-Stack Web Developer</h3>
               <p class="where">Creative Lebanon, Beirut</p>
               <p>Delivered client websites end to end and managed their hosting, domains, DNS, SSL and renewals.</p>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="when">2012 – 2021</span>
-            <div>
+            <div class="tl-card">
               <h3>Senior Software Developer</h3>
               <p class="where">Site Technology SAL, Beirut</p>
               <p>Election software and AI recognition systems: faces, licence plates, vehicle make and model. Led developer onboarding.</p>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="when">2009 – 2012</span>
-            <div>
+            <div class="tl-card">
               <h3>Software Developer</h3>
               <p class="where">Esiters, Dawra</p>
               <p>Port of Beirut modules for container and vessel tracking, reports and terminal messaging.</p>
             </div>
           </li>
-          <li>
+          <li class="reveal">
             <span class="when">2007 – 2009</span>
-            <div>
+            <div class="tl-card">
               <h3>Web Developer</h3>
               <p class="where">Early Host International, Beirut</p>
               <p>Database-driven platforms for municipalities, schools and event management.</p>
@@ -280,17 +358,23 @@
         </ol>
 
         <div class="credentials">
-          <div>
+          <div class="reveal">
             <h3>Education</h3>
             <p>MSc in Mathematics and Computer Science, Lebanese University, 2008</p>
           </div>
-          <div>
+          <div class="reveal">
             <h3>Certifications</h3>
-            <p>HP Data Science &amp; Analytics, Google Analytics, IBMI Leadership &amp; Team Development, Change Management, Project Management, Aconex. Neurocar ANPR/MMR training in Wrocław, Poland.</p>
+            <ul class="cert-list">
+              <li>HP Data Science &amp; Analytics</li><li>Google Analytics</li><li>IBMI Leadership &amp; Team Development</li><li>Change Management</li><li>Project Management</li><li>Aconex</li><li>Neurocar ANPR/MMR (Wrocław)</li>
+            </ul>
           </div>
-          <div>
+          <div class="reveal">
             <h3>Languages</h3>
-            <p>Arabic (native), English (professional), French (intermediate)</p>
+            <ul class="lang">
+              <li><span>Arabic</span><span class="bar"><i style="--w:100%"></i></span><small>Native</small></li>
+              <li><span>English</span><span class="bar"><i style="--w:85%"></i></span><small>Professional</small></li>
+              <li><span>French</span><span class="bar"><i style="--w:55%"></i></span><small>Intermediate</small></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -298,34 +382,38 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section contact">
+      <canvas class="section-net" data-net="soft" aria-hidden="true"></canvas>
       <div class="wrap contact-grid">
-        <div>
+        <div class="reveal">
           <h2 class="contact-title">Have a system that needs building, or a team that needs IT it can rely on?</h2>
           <p class="contact-lede">WhatsApp is the fastest way to reach me. For formal requests and documents, use email.</p>
         </div>
-        <ul class="contact-list">
-          <li>
-            <a href="https://wa.me/966509296490" target="_blank" rel="noopener">
-              <span class="c-label">WhatsApp, Saudi Arabia</span>
-              <span class="c-value">+966 50 929 6490</span>
+        <ul class="contact-cards">
+          <li class="reveal">
+            <a class="c-card" href="https://wa.me/966509296490" target="_blank" rel="noopener" data-spot>
+              <span class="c-ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+              <span><span class="c-label">WhatsApp, Saudi Arabia</span><span class="c-value">+966 50 929 6490</span></span>
             </a>
           </li>
-          <li>
-            <a href="https://wa.me/96171478217" target="_blank" rel="noopener">
-              <span class="c-label">WhatsApp, Lebanon</span>
-              <span class="c-value">+961 71 478 217</span>
+          <li class="reveal">
+            <a class="c-card" href="https://wa.me/96171478217" target="_blank" rel="noopener" data-spot>
+              <span class="c-ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
+              <span><span class="c-label">WhatsApp, Lebanon</span><span class="c-value">+961 71 478 217</span></span>
             </a>
           </li>
-          <li>
-            <a href="mailto:bilalmrad961@gmail.com">
-              <span class="c-label">Email</span>
-              <span class="c-value">bilalmrad961@gmail.com</span>
+          <li class="reveal c-row">
+            <a class="c-card" href="mailto:bilalmrad961@gmail.com" data-spot>
+              <span class="c-ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <span><span class="c-label">Email</span><span class="c-value">bilalmrad961@gmail.com</span></span>
             </a>
+            <button class="c-copy" data-copy="bilalmrad961@gmail.com" aria-label="Copy email address">
+              <svg aria-hidden="true"><use href="#i-copy"/></svg>
+            </button>
           </li>
-          <li>
-            <a href="https://www.linkedin.com/in/bilal-mrad-406b1363/" target="_blank" rel="noopener">
-              <span class="c-label">LinkedIn</span>
-              <span class="c-value">in/bilal-mrad</span>
+          <li class="reveal">
+            <a class="c-card" href="https://www.linkedin.com/in/bilal-mrad-406b1363/" target="_blank" rel="noopener" data-spot>
+              <span class="c-ico"><svg aria-hidden="true"><use href="#i-in"/></svg></span>
+              <span><span class="c-label">LinkedIn</span><span class="c-value">in/bilal-mrad</span></span>
             </a>
           </li>
         </ul>
@@ -344,6 +432,12 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4" defer></script>
+  <a href="#main" class="to-top" data-to-top aria-label="Back to top">
+    <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" /><circle class="ring-fill" cx="24" cy="24" r="22" data-ring /></svg>
+    <svg class="ico" aria-hidden="true"><use href="#i-up"/></svg>
+  </a>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="script.js?v=5" defer></script>
 </body>
 </html>
