@@ -124,7 +124,8 @@
         });
         const empty = $('[data-empty]'); if (empty) empty.hidden = shown > 0;
       };
-      if (document.startViewTransition && !reduce) document.startViewTransition(apply); else apply();
+      apply();
+      if (!reduce) projects.forEach((p) => { if (!p.classList.contains('is-hidden')) p.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.2,.7,.2,1)' }); });
     });
   }
 
